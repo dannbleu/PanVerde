@@ -15,7 +15,7 @@ router.post("/register", (req, res) => {
     jwt.sign({id: user._id}, process.env.SECRET, {
       expiresIn: 86400
     }, (err, token) => {
-      // if (err) throw err;
+      if (err) throw err;
       res.status(200).json({token});
     })
 
