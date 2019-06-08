@@ -22,11 +22,6 @@ app.use((err, req, res, next) => {
     res.status(500);
     res.json({ error });
   }
-  // only render if the error ocurred before sending the response
-  if (!res.headersSent) {
-    res.status(500);
-    res.render('error');
-  }
 });
 
 let server = http.createServer(app);

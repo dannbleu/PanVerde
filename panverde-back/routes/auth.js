@@ -32,33 +32,30 @@ router.post("/register", (req, res) => {
 
 
 router.post("/login", (req, res) => {
-  const {email, password} = req.body;
-  User.findOne({email})
-  .then(user => {
+  const { email, password } = req.body;
+  User.findOne({ email })
+    .then(user => {
 
-    if(!user) return res.status(404).json({
-      error: {},
-      message: "Email incorrecto"
-    })
+      if (!user) return res.status(404).json({
+        error: {},
+        message: "Email incorrecto"
+      });
 
-    const passwordIsValid = bcrypt.compareSync(password, user.password);
-    if(!passwordIsValid) return res.status(401).json({
-      error: {},
-      message: "Contraseña incorrecta"
-    })
+      const passwordIsValid = bcrypt.compareSync(password, user.password);
+      if (!passwordIsValid) return res.status(401).json({
+        error: {},
+        message: "Contraseña incorrecta"
+      });
 
-    jwt.sign({id: user._id}, process.env.SECRET, {
-      expiresIn: 86400
-    }, (err, token) => {
-      // if (err) throw err;
-      delete user._doc.password
-      res.status(200).json({token, user})
-
-    })
-
-  })
-
-})
+      jwt.sign({ id: user._id }, process.env.SECRET, {
+        expiresIn: 86400
+      }, (err, token) => {
+        // if (err) throw err;
+        delete user._doc.password
+        res.status(200).json({ token, user })
+      });
+    });
+});
 
 
 module.exports = router;
