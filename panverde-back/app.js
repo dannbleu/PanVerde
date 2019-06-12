@@ -8,6 +8,7 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const cors         = require('cors');
 
 
 mongoose
@@ -37,6 +38,12 @@ app.use(require('node-sass-middleware')({
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
+
+app.use(
+  cors({
+    origin: ['http://localhost:3001'],
+  })
+)
       
 
 app.set('views', path.join(__dirname, 'views'));
@@ -55,10 +62,12 @@ const index = require('./routes/index');
 const auth = require('./routes/auth');
 const category = require('./routes/catergory');
 const product = require('./routes/uploadProduct');
+const expo = require('./routes/expo.js');
 app.use('/api', index);
 app.use('/api/auth', auth);
 app.use('/api/category', category);
 app.use('/api/product', product);
+app.use('/api/expo', expo)
 
 
 module.exports = app;

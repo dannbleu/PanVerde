@@ -5,7 +5,7 @@ const NavBar = () => (
     <nav className="uk-navbar-container" uk-navbar="true">
         <div className="uk-navbar-left">
 
-            <a className="uk-navbar-item uk-logo" href="#">Logo</a>
+            <a className="uk-navbar-item uk-logo" href="/">Logo</a>
 
         </div>
 
