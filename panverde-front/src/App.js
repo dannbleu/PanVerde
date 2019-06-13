@@ -24,7 +24,7 @@ class App extends Component {
       <div className="App">
         <NavBar {...user} />
 
-        <div className="uk-section uk-section-xsmall">
+        <div className="uk-section uk-padding-remove">
           <Router/>
         </div>
       </div>
