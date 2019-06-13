@@ -24,8 +24,8 @@ class App extends Component {
       <div className="App">
         <NavBar {...user} />
 
-        <div className="uk-section">
-          <Router setUser={this.setUser} user={user} />
+        <div className="uk-section uk-section-xsmall">
+          <Router/>
         </div>
       </div>
     );
