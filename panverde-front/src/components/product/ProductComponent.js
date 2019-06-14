@@ -18,7 +18,12 @@ const ProductComponent = ({name, description, price, stock, images, category, ..
             </div>
             <div className="uk-card-body uk-padding-small">
             <table className="uk-table uk-table-divider uk-table-justify uk-table-middle">
-
+            {Object.keys(props).map((key, index) => (
+                        <tr key={index}>
+                            <td>{key}</td>
+                            <td>{props[key] ? props[key]: '-'}</td>
+                        </tr>
+                    ))}
             </table>
             </div>
             <div className="uk-card-footer uk-text-left">

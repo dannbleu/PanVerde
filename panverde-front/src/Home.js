@@ -6,14 +6,39 @@ import Uikit from 'uikit';
 import './App.css';
 
 
+{/* <div>
+<div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove " style={{ height: "400px" }}>
+    <div uk-slider="true" >
+        <ul className="uk-slider-items uk-light uk-align-center">
+            <li className="uk-transition-toggle " tabIndex="0">
+                <img className="ImagenLanding" style={{ width: "510px"}} src={images} alt={category} ></img>
+                <div className="uk-position-center uk-padding-remove uk-panel">
+
+                    <div className="uk-transition-slide-bottom">
+
+                       <Link to='/`${category}`'> {category.category}</Link>
+
+                    </div>
+
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+</div> */}
+
+
+
 class Home extends Component{
     render() {
         return (
             <div>
 
-                <div className="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-collapse uk-cover-container" uk-grid="masonry: true" style={{height: "100vh - 80px"}}>
+                <div className="uk-child-width-1-2@s uk-grid-collapse uk-cover-container" uk-grid="masonry: true" style={{height: "100vh"}}>
+                    
                     <div>
-                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove" style={{ height: "200px" }}>
+                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove " style={{ height: "400px" }}>
                             <div uk-slider="true" >
                                 <ul className="uk-slider-items uk-light uk-align-center">
                                     <li className="uk-transition-toggle " tabIndex="0">
@@ -28,18 +53,19 @@ class Home extends Component{
 
                                         </div>
                                     </li>
+
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div>
 
-                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove" style={{ height: "380px" }}>
+                    <div>
+                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove " style={{ height: "380px" }}>
                             <div uk-slider="true" >
                                 <ul className="uk-slider-items uk-align-center uk-light ">
                                     <li className="uk-transition-toggle " tabIndex="0">
                                         <img className="ImagenLanding" style={{ width: "510px", height: "380px"}} src="https://www.featurepics.com/StockImage/20100515/various-types-bread-stock-image-1539884.jpg" alt="pedidos" ></img>
-                                        <div className="uk-position-center uk-padding-remove uk-panel">
+                                        <div className="uk-position-center uk-padding-remove  uk-panel">
 
                                             <div className="uk-transition-slide-bottom">
 
@@ -52,16 +78,15 @@ class Home extends Component{
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                     <div>
 
-                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove" style={{ height: "420px" }}>
+                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove " style={{ height: "420px" }}>
                             <div uk-slider="true" >
                                 <ul className="uk-slider-items uk-align-center uk-dark ">
                                     <li className="uk-transition-toggle " tabIndex="0">
                                         <img className="ImagenLanding" style={{ width: "510px"}} src="https://walker-web.imgix.net/cms/epp2019tftn0214valentine_079_W.jpg?auto=format,compress&w=1920&h=1200&fit=max&dpr=1.5" alt="expo" ></img>
-                                        <div className="uk-position-center uk-padding-remove uk-panel">
+                                        <div className="uk-position-center uk-padding-remove  uk-panel">
 
                                             <div className="uk-transition-slide-bottom">
 
@@ -78,12 +103,12 @@ class Home extends Component{
 
                     </div>
                     <div>
-                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove" style={{ height: "200px" }}>
+                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove " style={{ height: "380px" }}>
                             <div uk-slider="true" >
                                 <ul className="uk-slider-items uk-align-center uk-light ">
                                     <li className="uk-transition-toggle " tabIndex="0">
                                         <img className="ImagenLanding" style={{ width: "510px", objectFit: "contain", height: "200px"}} src="https://www.elist10.com/wp-content/uploads/2019/04/Types-of-Bread.jpg" alt="pan salado" ></img>
-                                        <div className="uk-position-center uk-padding-remove uk-panel">
+                                        <div className="uk-position-center uk-padding-remove  uk-panel">
 
                                             <div className="uk-transition-slide-bottom">
 
@@ -99,12 +124,12 @@ class Home extends Component{
                     </div>
                     <div>
 
-                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove" style={{ height: "220px" }}>
+                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding- " style={{ height: "220px" }}>
                             <div uk-slider="true" >
                                 <ul className="uk-slider-items uk-align-center uk-light ">
                                     <li className="uk-transition-toggle " tabIndex="0">
                                         <img className="ImagenLanding" style={{ width: "510px", height: "220px"}} src="https://images.cdn3.stockunlimited.net/preview1300/menu-logo-icon_1710133.jpg" alt="menu" ></img>
-                                        <div className="uk-position-center uk-padding-remove uk-panel">
+                                        <div className="uk-position-center uk-padding-  uk-panel">
 
                                             <div className="uk-transition-slide-bottom">
 
@@ -122,12 +147,12 @@ class Home extends Component{
                     </div>
                     <div>
 
-                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove" style={{ height: "180px" }}>
+                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove " style={{ height: "180px" }}>
                             <div uk-slider="true" >
                                 <ul className="uk-slider-items uk-align-center uk-dark ">
                                     <li className="uk-transition-toggle " tabIndex="0">
                                         <img className="ImagenLanding" style={{ width: "510px", height: "180px"}} src="https://benllyhidalgo.com/wp-content/uploads/gestion-de-redes-sociales.png" alt="admin" ></img>
-                                        <div className="uk-position-center uk-padding-remove uk-panel">
+                                        <div className="uk-position-center uk-padding-remove  uk-panel">
 
                                             <div className="uk-transition-slide-bottom">
 
@@ -146,12 +171,12 @@ class Home extends Component{
                     <div>
 
 
-                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove" style={{ height: "200px" }}>
+                        <div className="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle uk-padding-remove " style={{ height: "200px" }}>
                             <div uk-slider="true" >
                                 <ul className="uk-slider-items uk-align-center uk-light ">
                                     <li className="uk-transition-toggle " tabIndex="0">
-                                        <img className="ImagenLanding" style={{ width: "auto", height: "200px"}} src="http://www.cursosbaristacafe.com.mx/2017/wp-content/uploads/2015/07/cafe-mas-caro.jpg?8aa32b&8aa32b" alt="cafe" ></img>
-                                        <div className="uk-position-center uk-padding-remove uk-panel">
+                                        <img className="ImagenLanding" style={{ width: "auto", height: "200px"}} src="https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="cafe" ></img>
+                                        <div className="uk-position-center uk-padding-remove  uk-panel">
 
                                             <div className="uk-transition-slide-bottom">
 
