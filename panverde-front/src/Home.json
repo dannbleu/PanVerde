@@ -1,0 +1,40 @@
+ [{
+        "src": "https://images.unsplash.com/photo-1550599112-0c21a831f6b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3900&q=80",
+        "alt": "Pan Salado",
+        "route": "/PanSalado",
+        "description": "Ingredientes frescos y listo para su mesa"
+    },
+    {
+        "src": "https://images.unsplash.com/photo-1533893057902-dbc94f18f01f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+        "alt": "Pan Dulce",
+        "route": "/PanDulce",
+        "description": "Algo dulce como postre"
+    },
+    {
+        "src": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80",
+        "alt": "Barra de Cafe",
+        "route": "/Cafe",
+        "description": "Excelente cafe para complementar la experiencia de la panaderia"
+    },
+    {
+        "src": "https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+        "alt": "Aperitivos",
+        "route": "/Aperitivos",
+        "description": "Algo para comer"
+    },
+    {
+        "src": "https://images.unsplash.com/photo-1530655268988-5456ff267b16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80",
+        "alt": "Promociones",
+        "route": "/Promos",
+        "description": "Visita nuestras promociones"
+    },
+    {
+        "src": "https://images.unsplash.com/photo-1513705138751-16c75b89180e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+        "alt": "Exposiciones",
+        "route": "/Expo",
+        "description": "Agenda un periodo para exponer o visita las exposiciones pasadas"
+    }
+]
+
+
+
