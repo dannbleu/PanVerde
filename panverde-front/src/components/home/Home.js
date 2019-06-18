@@ -1,22 +1,22 @@
 import React, { Component } from "react";
-import Router from "./Router";
+import Router from "../../Router";
 // import NavBar from "./components/common/Navbar";
 
 import Uikit from 'uikit';
 import home from './Home.json';
-import './App.css';
+import '../../App.css';
 import HomeSliderComponent from "./HomeSliderComponent";
 
 class Home extends Component{
     render() {
         console.log('asdasd',home)
         return (
-            <div class="uk-section uk-section-muted">
-                <div class="uk-container uk-container-large">
+            <div className="uk-section uk-section-muted">
+                <div className="uk-container uk-container-large">
                     <div
                         className="uk-position-relative uk-visible-toggle uk-light"
                         tabIndex="-1"
-                        uk-slideshow='animation:fade'
+                        uk-slideshow='animation:fade autoplay-interval:3000 pause-on-hover'
                     >
                             <ul className="uk-slideshow-items">
                                 {home.map((data, i) =>

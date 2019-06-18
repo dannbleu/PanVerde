@@ -25,10 +25,19 @@ router.post("/register", (req, res) => {
       error,
       message: "No se pudo crear el usuario"
     })
+
+    console.log(error)
   })
-
-
 })
+
+router.get("/getUsers", (req, res, next) => {
+  User.find().then(user =>
+    res.status(200).json({ user })
+  ).catch(error => {
+    error.action = "Error al encontrar usuarios";
+    next(error);
+  });
+});
 
 
 router.post("/login", (req, res) => {

@@ -41,6 +41,7 @@ class Signup extends Component {
     let field = e.target.name;
     auth[field] = e.target.value;
     this.setState({ auth });
+    console.log(auth)
   };
 
   render() {
