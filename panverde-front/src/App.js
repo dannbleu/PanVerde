@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Router from "./Router";
 import NavBar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
 
 class App extends Component {
   state = {
@@ -27,6 +28,7 @@ class App extends Component {
         <div className="uk-section uk-padding-remove">
           <Router/>
         </div>
+        <Footer/>
       </div>
     );
   }

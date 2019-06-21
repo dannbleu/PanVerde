@@ -9,9 +9,9 @@ import HomeSliderComponent from "./HomeSliderComponent";
 
 class Home extends Component{
     render() {
-        console.log('asdasd',home)
+        //console.log('asdasd',home)
         return (
-            <div className="uk-section uk-section-muted">
+            <div className="uk-section uk-section-muted uk-padding-small uk-padding-remove-left uk-padding-remove-right ">
                 <div className="uk-container uk-container-large">
                     <div
                         className="uk-position-relative uk-visible-toggle uk-light"

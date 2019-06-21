@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import UIkit from 'uikit';
 import ProductComponent from './ProductComponent';
+import { ShowProducts } from '../../services/product';
 
 class ProductComponentContainer extends Component {
 
@@ -11,13 +12,26 @@ class ProductComponentContainer extends Component {
         this.state = {
             products: []
         };
-        console.log(this.state)
+    }
+
+    
+    componentWillMount() {
+        this.getAllProducts()
+    }
+
+    getAllProducts = () => {
+        ShowProducts().then(res =>
+
+            this.setState({products:res.products})
+            ).catch(err=>console.log('err',err))
     }
 
     render() {
 
-        const { products } = this.state;
         
+        let { products } = this.state;
+        console.log('dasdsadasd',products   )
+
         return (
             <div>
 
@@ -25,10 +39,10 @@ class ProductComponentContainer extends Component {
                     <div className="uk-container">
                         <h1>Productos</h1>
                         <div className="uk-grid-match uk-child-width-1-4" uk-grid="true">
-                            {products.map(
-                                (product, index) =>
-                                    <ProductComponent key={index} {...product} />
-                            )
+                            {products.length >= 1 ? products.map(
+                                (product, i) =>
+                                    <ProductComponent key={i} {...product} />
+                            ) : ''
                             }
                         </div>
                     </div>
@@ -38,15 +52,6 @@ class ProductComponentContainer extends Component {
         );
     }
 
-    componentDidMount() {
-
-        axios.get("http://localhost:3000/api/product/getAll")
-            .then(res => {
-                const { products } = res.data;
-                console.log("aaaaa",res.data);
-                this.setState({ products });
-        })
-    }
 };
 
 export default ProductComponentContainer;

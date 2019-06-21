@@ -49,14 +49,10 @@ app.use(
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
-
-
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
-
-
 
 const index = require('./routes/index');
 const auth = require('./routes/auth');
@@ -67,7 +63,11 @@ app.use('/api', index);
 app.use('/api/auth', auth);
 app.use('/api/category', category);
 app.use('/api/product', product);
-app.use('/api/expo', expo)
+app.use('/api/expo', expo);
+
+app.use("*", (req, res) => {
+  res.sendFile(path.join (__dirname, 'public', 'index.html'))
+})
 
 
 module.exports = app;
