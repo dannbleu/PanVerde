@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { ShowSucursales } from '../../services/sucursal';
 
 import Map from './SucursalComponent';
+import { makeEmptyAggregatedTestResult } from '@jest/test-result';
  
 export class MapContainer extends Component {
 
@@ -32,7 +33,10 @@ export class MapContainer extends Component {
 
     return(
       <div style={{ width: "100vw" }}>
-        <Map/>
+        <Map
+          
+          sucursales={sucursales}
+        />
         {/* {sucursales.map(
             (sucursal, i) => 
              <Map key={i}{...sucursal} />

@@ -330,3 +330,12 @@
 body {
   background-color: #212121;
 }
+
+.mapita {
+  width: "20px"!important; 
+  height: "20px"!important;
+}
+
+.mapita img {
+  height: 100px !important
+}
