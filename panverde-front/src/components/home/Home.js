@@ -10,6 +10,9 @@ import HomeSliderComponent from "./HomeSliderComponent";
 class Home extends Component{
     render() {
         //console.log('asdasd',home)
+        // salado https://images.unsplash.com/photo-1550599112-0c21a831f6b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3900&q=80
+        // dulce https://images.unsplash.com/photo-1533893057902-dbc94f18f01f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80
+
         return (
             <div className="uk-section uk-section-muted uk-padding-small uk-padding-remove-left uk-padding-remove-right ">
                 <div className="uk-container uk-container-large">
