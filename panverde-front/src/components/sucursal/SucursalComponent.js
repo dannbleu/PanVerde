@@ -28,7 +28,7 @@ console.log(sucursales)
                         longitude={data.position.coordinates[1]}
                         offsetLeft={-20}
                         offsetTop={-10}>
-                        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/1008021/images/6285930/Webp.net-resizeimage.jpg"
+                        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/1008021/images/6286035/Webp.net-resizeimage.png"
                             alt="mapita"></img>
                     </Marker>): ''}
             </ReactMapGl>

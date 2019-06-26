@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
-const ProductComponent = ({name, description, price, stock, images, category}) => (
+const ProductComponent = ({name, description, price, stock, images, category, user}) => (
     <div>
         <figure className="snip1529"><img src={images} alt={name} />
             <div className="date"><span className="day">{price}</span></div>

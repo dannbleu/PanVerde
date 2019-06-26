@@ -19,11 +19,7 @@ const NavBar = () => (
                 <li><Link to="/pedidos">Pedidos</Link></li>
                 <li><Link to="/expo">Exposiciones</Link></li>
                 <li><Link to="/sucursales">Sucursales</Link></li>
-                <li><Link to="/login">Iniciar sesión</Link></li>
-                <li><Link to="/register">Registro</Link></li>
-                <li><a href="#">Cerrar sesión</a></li>
             </ul>
-
         </div>
 
     </nav>

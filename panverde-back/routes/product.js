@@ -4,9 +4,14 @@ const Product = require("../models/Product");
 const upload = require("../helpers/multer");
 
 router.post("/create", upload.array("images"), (req, res, next) => {
-  req.body.images = req.files.map(file => file.url);
 
-  Product.create(req.body).then(product => {
+  if (req.files) {
+    req.body.images = req.files.map(file => file.url);
+  }
+  
+  console.log('product',req.body)
+  Product.create({ ...req.body }).then(product => {
+    console.log('product',product)
     res.status(200).json(product);
   })
   .catch(error => {
@@ -17,14 +22,14 @@ router.post("/create", upload.array("images"), (req, res, next) => {
 
 router.get("/getAll", (req, res, nexts) => {
   Product.find()
-    .then(products => {
-      res.status(200).json({ products })
+    .then(products => 
+      res.status(200).json({ products }))
         .catch(error => {
           error.action = "Error finding products";
           next(error);
         });
     });
-});
+
 
 
 

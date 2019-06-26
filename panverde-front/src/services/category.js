@@ -11,8 +11,8 @@ export const CreateCategory = category => {
     })
 }
 
-export const ShowCategory = category => {
-    return axios.get(`${base_url}/category/getAll`, category)
+export const ShowCategory = () => {
+    return axios.get(`${base_url}/category/getAll`)
         .then(res => res.data)
         .catch(error => {
         throw error.response.data
