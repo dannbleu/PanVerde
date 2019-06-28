@@ -33,7 +33,7 @@ router.get("/getAll", (req, res, nexts) => {
 
 
 
-router.patch('/:id/edit/',(req,res, next)=>{
+router.patch('/:id/edit',(req,res, next)=>{
   let {id}= req.params
   let product = req.body
   Product.findByIdAndUpdate({ _id: id }, { $set: { ...product } }, { new: true })
@@ -43,6 +43,22 @@ router.patch('/:id/edit/',(req,res, next)=>{
     error.action = "Error editing product";
     next(error);
   });
+})
+
+router.delete("/:id/delete", (req,res) => {
+
+  const {id} = req.params;
+
+  Product.findByIdAndDelete(id)
+  .then(product => {
+    res.status(200).json({product})
+  })
+  .catch(error => {
+    res.status(500).json({
+      error,
+      message: "Error al eliminar el producto"
+    })
+  })
 })
 
 

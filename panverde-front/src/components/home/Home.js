@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-import Router from "../../Router";
-// import NavBar from "./components/common/Navbar";
-
-import Uikit from 'uikit';
 import home from './Home.json';
 import '../../App.css';
 import HomeSliderComponent from "./HomeSliderComponent";

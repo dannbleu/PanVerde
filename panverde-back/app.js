@@ -60,12 +60,14 @@ const category = require('./routes/catergory');
 const product = require('./routes/product');
 const expo = require('./routes/expo.js');
 const sucursal = require('./routes/sucursal');
+const pedido = require('./routes/pedido');
 app.use('/api', index);
 app.use('/api/auth', auth);
 app.use('/api/category', category);
 app.use('/api/product', product);
 app.use('/api/expo', expo);
 app.use('/api/sucursal', sucursal);
+app.use('/api/peido', pedido);
 
 app.use("*", (req, res) => {
   res.sendFile(path.join (__dirname, 'public', 'index.html'))

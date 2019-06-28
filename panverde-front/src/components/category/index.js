@@ -22,7 +22,7 @@ class Categoryform extends Component {
                     <div className="uk-align-center">
                         <div className="uk-margin">
                             <div className="uk-inline">
-                                <a className="uk-form-icon" href="#" uk-icon="icon: pencil"></a>
+                                <a className="uk-form-icon" href="#" uk-icon="icon: pencil">a</a>
                                 <label>Crear Categoria
                                     <input className="uk-input" type="text">                             
                                 </input></label>
@@ -31,7 +31,7 @@ class Categoryform extends Component {
 
                         <div className="uk-margin">
                             <div className="uk-inline">
-                                <a className="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: link"></a>
+                                <a className="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: link">a</a>
                                 <label>Modificar Categoria
                                     <input className="uk-input" type="text"></input>
                                 </label>

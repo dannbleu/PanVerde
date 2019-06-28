@@ -9,18 +9,20 @@ import menu from './components/menu/menu';
 import MapContainer from './components/sucursal/SucursalComponentContainer';
 import Administrator from './components/admin/administrator';
 import AdminProduct from './components/product/AdminProduct';
+import PedidosComponent from './components/pedidos/PedidosComponent';
 
 const Router = ({setUser, user}) => (
     <Switch>
         <Route exact path="/" render={(props) => <Home user={user} {...props} />} />
-    <Route  path="/login" render={(props) => <Login setUser={setUser} user={user} {...props} />} />
+        <Route  path="/login" render={(props) => <Login setUser={setUser} user={user} {...props} />} />
         <Route  path="/register" render={(props) => <Signup {...props} setUser={setUser} user={user} />} />
         <Route path="/category" render={(props) => <Categoryform {...props} />} />
         <Route path="/product" component={ProductComponentContainer} />
         <Route path="/menu" component={menu} />
         <Route path='/sucursales' component={MapContainer} />
         <Route path='/admin' component={Administrator} />
-        <Route path='/adminProduct' component={AdminProduct}/>
+        <Route path='/adminProduct' component={AdminProduct} />
+        <Route path='/pedidos' component={PedidosComponent} />
     </Switch>
 )
 

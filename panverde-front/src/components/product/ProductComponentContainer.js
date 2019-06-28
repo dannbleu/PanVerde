@@ -1,7 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
-import UIkit from 'uikit';
 import ProductComponent from './ProductComponent';
 import { ShowProducts } from '../../services/product';
 

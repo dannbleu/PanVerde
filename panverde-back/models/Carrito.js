@@ -2,30 +2,24 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const carritoSchema = new Schema({
-  owner: {
-    type: Schema.Types.ObjectId,
+  email: {
+    type: String,
     required: true,
-    ref: User
   },
-  
-  total: {
-    type: Number,
-    default: 0
+  date: {
+    type: Date,
+    default: Date.now,
+    required: 'Proporciona una Fecha de entrega'
   },
   item: [{
     product: {
       type: Schema.Types.ObjectId,
       required: true,
-      ref: Product
+      ref: "Product"
     },
     quantity: {
-      type: Number
-    },
-    price: {
       type: Number,
-      default: 0
-    }
-    
+    }    
   }]
     
   

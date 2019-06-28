@@ -1,7 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import moment from 'moment';
-import { Link } from 'react-router-dom';
 
 const ProductComponent = ({name, description, price, stock, images, category, user}) => (
     <div>

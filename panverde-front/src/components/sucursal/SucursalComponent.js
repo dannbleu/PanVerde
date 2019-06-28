@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ReactMapGl, { Marker } from 'react-map-gl';
+import ReactMapGl, { Marker, GeolocateControl } from 'react-map-gl';
 import "../../App.css";
 
 
@@ -20,7 +20,11 @@ console.log(sucursales)
                 mapStyle="mapbox://styles/dannbleu/cjx799kpq0ls61cry2xsujbc0"
                 onViewportChange={viewport => {
                     setViewport(viewport);
-            }}>
+                }}>
+                <GeolocateControl 
+                    positionOptions={{enableHighAccuracy: true}}
+                    trackUserLocation={true}
+                    />
                 {sucursales.length ? sucursales.map((data, i) =>
                     <Marker
                         key={i}
@@ -30,7 +34,9 @@ console.log(sucursales)
                         offsetTop={-10}>
                         <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/1008021/images/6286035/Webp.net-resizeimage.png"
                             alt="mapita"></img>
-                    </Marker>): ''}
+                        
+                    </Marker>) : ''}
+                    
             </ReactMapGl>
         </div>
         

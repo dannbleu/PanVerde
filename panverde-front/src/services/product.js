@@ -15,13 +15,13 @@ export const createProduct = product => {
 };
 
 export const deleteProduct = id => {
-    return axios.delete(`${base_url}/product/${id}`)
+    return axios.delete(`${base_url}/product/${id}/delete`)
     .then(res => res.data.product)
     .catch(err => err)
 }
 
 export const editProduct = product => {
-    return axios.patch(`${base_url}/product/${product._id}`, product)
+    return axios.patch(`${base_url}/product/${product._id}/edit`, product)
     .then(res => res.data.product)
     .catch(err => err)
 }

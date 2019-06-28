@@ -6,7 +6,7 @@ import {ShowProducts, createProduct, editProduct, deleteProduct} from '../../ser
 
 // components
 import ProductForm from '../product/ProductForm';
-import ProductComponent from '../product/ProductComponent';
+import ProductComponentContainer from './ProductComponentContainer';
 
 class AdminProduct extends Component {
   
@@ -25,8 +25,9 @@ class AdminProduct extends Component {
   componentDidMount() {
     let products = JSON.parse(localStorage.getItem('products'))
     let categories = JSON.parse(localStorage.getItem('category'))
-    this.setState({categories})
-    console.log('product',products)
+    this.setState({ categories })
+    this.setState({ products })
+    console.log('product y cat',products, categories)
     
   }
 
@@ -83,29 +84,34 @@ class AdminProduct extends Component {
   deleteProduct = id => {
     let {products} = this.state;
     deleteProduct(id)
-    .then(product => {
+      .then(product => {
+      
 
       UIkit.notification({
-        message: `<span uk-icon="icon:check"></span> ${product._id} eliminado con exito`,
+        message: `<span uk-icon="icon:check"></span> ${products.name} eliminado con exito`,
         status: "success",
         pos: "top-right"
       })
 
-      products = products.filter(product => product._id !== id);
+      products = products.filter(products => products._id !== id);
       this.setState({products});
-
+console.log("para delete",products._id)
     })
   }
 
   render(){
-    const { product, products, error, categories } = this.state;
-    console.log(categories)
+    const { product, error, categories } = this.state;
+    const id = this.state.products._id;
+    
+    console.log("categorias", categories)
+    console.log("qwunsab", this.state.products)
+    console.log("id", id)
     return (
       <div className="">
         <h1>Productos</h1>
         <div className="uk-section">
           <div className="uk-container">
-            <div className="uk-grid-match uk-child-width-1-2" uk-grid="true">
+            <div className="uk-grid uk-child-width-1-2" uk-grid="true">
             <div>
               <ProductForm
                   {...product}
@@ -116,11 +122,27 @@ class AdminProduct extends Component {
               />
             </div>
             <div>
-              <ProductComponent
-                todos={products}
-                setTodo={this.setTodo}
-                deleteItem={this.deleteItem}
-              />
+            <table className="uk-table uk-table-justify uk-table-divider">
+              <thead className="thead-dark">
+                <tr>
+                  <th className="uk-text-middle">Foto</th>
+                  <th className="uk-text-middle">Nombre</th>
+                  <th className="uk-text-middle">Accion</th>
+                </tr>
+              </thead>
+              <tbody>
+                    {this.state.products.map((product, i) => {
+                  return  (
+                      <tr key={i}>
+                        <td className="uk-text-middle"><img src={product.images} width="80px" alt=""/></td>
+                        <td className="uk-text-middle">{product.name}</td>
+                        <td className="uk-text-middle"><button className="uk-button uk-button-danger" onClick={()=>{this.deleteProduct(product._id)}}>Eliminar</button></td>
+                      </tr>
+                  )
+                  })
+                }
+              </tbody>
+            </table>
             </div>
             </div>
           </div>
@@ -131,3 +153,4 @@ class AdminProduct extends Component {
 }
 
 export default AdminProduct;
+
