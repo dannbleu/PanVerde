@@ -43,7 +43,7 @@ const ProductForm = ({handleChange, handleSubmit, email, date, quantity, error, 
 
                 <div className="uk-margin">
                     <label>Fecha de entrega:</label>
-                    <DatePicker/>
+                    <DatePicker selected={date}/>
                 </div>
 
             </fieldset>

@@ -6,6 +6,7 @@ const upload = require("../helpers/multer");
 router.post("/create", upload.array("images"), (req, res, next) => {
 
   if (req.files) {
+    console.log('Entro aqui',req.files)
     req.body.images = req.files.map(file => file.url);
   }
   

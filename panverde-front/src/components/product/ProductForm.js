@@ -26,6 +26,7 @@ const ProductForm = ({handleChange, handleSubmit, name, category, images, descri
                         type="file"
                         name="images"
                         value={images}
+                        multiple
                     />
                     
                 </div>

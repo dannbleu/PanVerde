@@ -9,7 +9,23 @@ export const ShowProducts = () => {
         .catch(err => err)
     }
 export const createProduct = product => {
-    return axios.post(`${base_url}/product/create`, product)
+    let formProduct = new FormData();
+    if (product.images) {
+        for (let images of product.images) {
+            formProduct.append('images', images)
+        }
+        delete product.images
+        
+    }for (let key in product) {
+            formProduct.append(key, product[key])
+        }
+    
+    let config = {
+        headers: {
+            'Contnent-Tyoe':'multipart/form-data'
+        }
+    }
+    return axios.post(`${base_url}/product/create`,formProduct,config )
     .then(res => res.data)
     .catch(err => err)
 };

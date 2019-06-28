@@ -6,7 +6,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
-import {BrowserRouter} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import 'react-datepicker/dist/react-datepicker.css'
 
 import 'moment/locale/es';
 

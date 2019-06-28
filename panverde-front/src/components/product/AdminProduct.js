@@ -38,14 +38,20 @@ class AdminProduct extends Component {
   handleChange = e => {
     const {data} = this.state;
     const field = e.target.name;
+    if (e.target.files) {
+      data.images = e.target.files
+      console.log('DATAAAAAAAAA',data)
+      return this.setState({data})
+    }
     data[field] = e.target.value;
-    this.setState({data});
+    this.setState({ data });
+    //console.log("esto es data", data)
   }
 
   handleSubmit = e => {
     e.preventDefault();
     //Arreglar validacion porque el un obj lo que se manda en el create product
-    const {product, data} = this.state;
+    const { product, data } = this.state;
     // if(!product.length) return this.setState({error: "Debes agregar un producto"})
     // const index = product.findIndex(p => p._id === product._id);
     // product._id ? this.onEditProduct(index) : this.onCreateProduct();
