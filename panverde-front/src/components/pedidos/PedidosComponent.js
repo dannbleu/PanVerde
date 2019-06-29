@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import UIkit from 'uikit';
 import moment from 'moment'
+import Swal from 'sweetalert2'
 // services 
 import {ShowPedidos, createPedido, editPedido, deletePedido} from '../../services/pedido';
 
@@ -71,6 +72,7 @@ class PedidosComponent extends Component {
     // if(!product.length) return this.setState({error: "Debes agregar un producto"})
     // const index = product.findIndex(p => p._id === product._id);
     // product._id ? this.onEditProduct(index) : this.onCreateProduct();
+    
     this.onCreatePedido()
   }
 
@@ -110,7 +112,14 @@ class PedidosComponent extends Component {
 
     createPedido(newObj)
     .then(pedido => {
-      console.log('quee',pedido);
+      console.log('quee', pedido);
+      Swal.fire({
+        position: 'center',
+        type: 'success',
+        title: 'Su pedido ha sido creado, verifique su carpeta de spam',
+        showConfirmButton: false,
+        timer: 1500
+    })
     })
     .catch(error => {
       this.setState({error: error.message})
@@ -156,7 +165,7 @@ class PedidosComponent extends Component {
               />
             </div>
               <div>
-                <h1>Aqui se vera el pedido</h1>
+                <h3>Aqui se verá el pedido</h3>
 
                 <table className="uk-table uk-table-justify uk-table-divider">
               <thead className="thead-dark">

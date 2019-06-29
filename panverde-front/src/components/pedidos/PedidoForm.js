@@ -8,7 +8,7 @@ const ProductForm = ({handleChangeDate, handleChange, handleSubmit, addItems, em
             <fieldset className="uk-fieldset">
 
                 <div className="uk-margin">
-                    <label>email:</label>
+                    <label>Email:</label>
                     <input
                         onChange={handleChange}
                         className={`uk-input ${error ? 'uk-form-danger' : '' }`} 
