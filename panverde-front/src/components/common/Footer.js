@@ -44,10 +44,8 @@ class Footer extends Component {
 
                             <div>
                                 <ul className="social-icons">
-                                <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                                <li><a className="twitter" href="#"><i className="fa fa-twitter"></i></a></li>
-                                <li><a className="dribbble" href="#"><i className="fa fa-dribbble"></i></a></li>
-                                <li><a className="linkedin" href="#"><i className="fa fa-linkedin"></i></a></li>   
+                                    <li className="uk-align-center" style={{"zIndex":"1234"}}><span className="uk-icon-link uk-padding-small" uk-icon="reciever"></span>55-35-61-26-55</li>
+                                    <li><a className="facebook" href="https://www.facebook.com/PanVerdeOficial/"><i className="fa fa-facebook"></i></a></li>                                   
                                 </ul>
                             </div>
                         </div>

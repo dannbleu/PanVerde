@@ -1,7 +1,7 @@
 import React from 'react';
 import DatePicker from 'react-datepicker';
 
-const ProductForm = ({handleChange, handleSubmit, email, date, quantity, error, _id}) => (
+const ProductForm = ({handleChangeDate, handleChange, handleSubmit, addItems, email, date, quantity, error, products,selectProduct,handleDylan}) => (
     <div>
         <h3>Realiza una cotización</h3>
         <form className="uk-text-left" onSubmit={handleSubmit}>
@@ -20,14 +20,24 @@ const ProductForm = ({handleChange, handleSubmit, email, date, quantity, error, 
                 </div>
 
                 <div className="uk-margin">
+                    <label>Fecha de entrega:    </label>
+                    <DatePicker
+                        showTimeSelect="true"
+                        onChange={handleChangeDate}
+                        name="date"
+                        value={date}
+                    />
+                </div>
+
+                <div className="uk-margin">
                     <label>Productos:</label>
-                    {/* <select className="uk-select" name='products' onChange={handleChange}>
-                        < option >Selecciona un producto</option>
-                            {ped.length <= 0 ? '' :
-                                product.map((data, i) =>
-                                < option key={i} value={data._id} >{data.name}</option>
+                    <select className="uk-select" name='_id' onChange={handleChange} value={selectProduct}>
+                        < option value="0" >Selecciona un producto</option>
+                            {products.length <= 0 ? '' :
+                                products.map((data, i) =>
+                                < option key={i} value={i} >{data.name}</option>
                                 )}
-                        </select> */}
+                        </select>
                 </div>
 
                 <div className="uk-margin">
@@ -41,15 +51,17 @@ const ProductForm = ({handleChange, handleSubmit, email, date, quantity, error, 
                     />
                 </div>
 
-                <div className="uk-margin">
-                    <label>Fecha de entrega:</label>
-                    <DatePicker selected={date}/>
-                </div>
+                
 
             </fieldset>
-                <button className="uk-button uk-button-primary">
-                Solicitar una cotización
+            <button className="uk-button uk-button-primary"
+            onClick={addItems}>
+                Añadir Productos   
                 </button>
+                <button className="uk-button uk-button-primary">
+                Solicitar una cotización    
+                </button>
+            
         </form>
 
         {error && (

@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const Pedido = require("../models/Carrito");
+const Carrito = require("../models/Carrito");
 
 router.post("/create", (req, res, next) => {
   
   console.log('pedido',req.body)
-  Pedido.create({ ...req.body }).then(pedido => {
+  Carrito.create({ ...req.body }).then(pedido => {
     console.log('pedido',pedido)
     res.status(200).json(pedido);
   })
@@ -16,7 +16,7 @@ router.post("/create", (req, res, next) => {
 });
 
 router.get("/getAll", (req, res, nexts) => {
-  Pedido.find()
+  Carrito.find()
     .then(pedidos => 
       res.status(200).json({ pedidos }))
         .catch(error => {
@@ -31,7 +31,7 @@ router.get("/getAll", (req, res, nexts) => {
 router.patch('/:id/edit',(req,res, next)=>{
   let {id}= req.params
   let pedido = req.body
-  Pedido.findByIdAndUpdate({ _id: id }, { $set: { ...pedido } }, { new: true })
+  Carrito.findByIdAndUpdate({ _id: id }, { $set: { ...pedido } }, { new: true })
     .then(pedido =>
     res.status(200).json({pedido})
   ).catch(error => {
@@ -44,7 +44,7 @@ router.delete("/:id/delete", (req,res) => {
 
   const {id} = req.params;
 
-  Pedido.findByIdAndDelete(id)
+  Carrito.findByIdAndDelete(id)
   .then(pedido => {
     res.status(200).json({pedido})
   })

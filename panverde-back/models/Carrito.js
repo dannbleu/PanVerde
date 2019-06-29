@@ -12,7 +12,7 @@ const carritoSchema = new Schema({
     required: 'Proporciona una Fecha de entrega'
   },
   item: [{
-    product: {
+    _id: {
       type: Schema.Types.ObjectId,
       required: true,
       ref: "Product"

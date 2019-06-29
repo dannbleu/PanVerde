@@ -67,7 +67,7 @@ app.use('/api/category', category);
 app.use('/api/product', product);
 app.use('/api/expo', expo);
 app.use('/api/sucursal', sucursal);
-app.use('/api/peido', pedido);
+app.use('/api/pedido', pedido);
 
 app.use("*", (req, res) => {
   res.sendFile(path.join (__dirname, 'public', 'index.html'))

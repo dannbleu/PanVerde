@@ -9,9 +9,10 @@ export const ShowPedidos = () => {
         .catch(err => err)
     }
 export const createPedido = pedido => {
+    console.log("los pedidos", pedido)
     return axios.post(`${base_url}/pedido/create`, pedido)
     .then(res => res.data)
-    .catch(err => err)
+    .catch(err => err);
 };
 
 export const deletePedido = id => {
